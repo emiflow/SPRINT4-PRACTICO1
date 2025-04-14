@@ -1,6 +1,6 @@
 <div class="delete-container">
     <h1 class="delete-title">¿Estás seguro de eliminar a <%= idNombreSuperheroe.nombreSuperHeroe %>?</h1>
-    <form action="http://localhost:3000/api/borrarPorId/<%=idNombreSuperheroe._id%>?_method=DELETE" method="post" class="delete-form">
+    <form action="https://sprint4-practico1-1-hze6.onrender.com/api/borrarPorId/<%=idNombreSuperheroe._id%>?_method=DELETE" method="post" class="delete-form">
         <button type="submit" name="confirmacion" value="SI" class="btn btn-yes">Sí</button>
         <button type="submit" name="confirmacion" value="NO" class="btn btn-no">No</button>
     </form>

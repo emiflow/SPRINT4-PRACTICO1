@@ -60,7 +60,7 @@ export async function obtenerSuperheroesMayoresDe30Controller( req, res) {
 export async function crearSuperheroeController(req, res) {
     try {
         const creandoSuperheroe = await crearSuperheroe(req.body);
-        res.redirect('http://localhost:3000/api/heroes');
+        res.redirect('https://sprint4-practico1-1-hze6.onrender.com/api/heroes');
     } catch (error) {
         res.status(500).send({mensaje:'Error al crear un superheroe nuevo'});
     }
@@ -71,7 +71,7 @@ export async function actualizarSuperheroeController(req, res) {
     const {id}= req.params;
     const datosActualizados = req.body;
     const resultado = await actualizarSuperheroe(id,datosActualizados);
-    res.redirect('http://localhost:3000/api/heroes');
+    res.redirect('https://sprint4-practico1-1-hze6.onrender.com/api/heroes');
     } catch (error) {
         res.status(500).send({mensaje:'Superheroe con ID incorrecto o inexistente'}); 
     }
@@ -88,7 +88,7 @@ export async function borrarPorIdController(req, res) {
                 res.status(500).send({mensaje:'Ya ha sido borrado el superheroe con ese ID'}); 
             }
             else{
-                res.redirect('http://localhost:3000/api/heroes');
+                res.redirect('https://sprint4-practico1-1-hze6.onrender.com/api/heroes');
             }
         }
         catch(error){
@@ -96,7 +96,7 @@ export async function borrarPorIdController(req, res) {
         }
      }
      else{
-         res.redirect('http://localhost:3000/api/heroes');
+         res.redirect('https://sprint4-practico1-1-hze6.onrender.com/api/heroes');
      }
 }
 

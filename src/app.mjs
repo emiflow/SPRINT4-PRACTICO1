@@ -12,7 +12,7 @@ app.set('view engine' , 'ejs');
 app.use(expressLayouts);
 app.set('layout','layout');
 app.use(express.static(path.resolve('./public')));
-const PORT =  3000;
+const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true })); // Para formularios URL-encoded
 app.use(methodOverride('_method'));
 // Middleware para parsear JSON
@@ -30,6 +30,6 @@ app.use((req, res) => {
 });
 
 // Iniciar el servidor
-app.listen(PORT,'0.0.0.0', () => {
+app.listen(PORT, () => {
     console.log(`Servidor levantado en el puerto :${PORT}, desde el servidor`);
 });

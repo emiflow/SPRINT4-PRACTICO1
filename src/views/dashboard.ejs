@@ -29,7 +29,7 @@
                     <td class="p-3">[<%= superheroe.enemigos %>]</td>
                     <td class="p-3"><%= superheroe.creador %></td>
                     <td class="p-3">
-                        <form action="http://localhost:3000/api/formularioActualizarSuperheroe" method="post">
+                        <form action="https://sprint4-practico1-1-hze6.onrender.com/api/formularioActualizarSuperheroe" method="post">
                             <input type="hidden" name="_id" value="<%= superheroe._id %>">
                             <input type="hidden" name="nombreSuperHeroe" value="<%= superheroe.nombreSuperHeroe %>">
                             <input type="hidden" name="nombreReal" value="<%= superheroe.nombreReal%>">
@@ -44,7 +44,7 @@
                         </form>
                     </td>
                     <td class="p-3">
-                        <form action="http://localhost:3000/api/alertaEliminacionSuperheroe" method="post">
+                        <form action="https://sprint4-practico1-1-hze6.onrender.com/api/alertaEliminacionSuperheroe" method="post">
                             <input type="hidden" name="_id" value="<%= superheroe._id %>">
                             <input type="hidden" name="nombreSuperHeroe" value="<%= superheroe.nombreSuperHeroe %>">
                             <button type="submit" class="btn-eliminar">Eliminar</button>
