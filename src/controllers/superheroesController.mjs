@@ -20,7 +20,7 @@ export async function obtenerSuperheroePorIdController(req, res) {
 export async function obtenerTodosLosSuperheroesController(req, res) {
     try {
         const superheroes = await obtenerTodosLosSuperheroes();
-        res.render('dashboard', {superheroes} );
+        res.render('dashboard', {superheroes,title:'Lista Superheroes'});
     } catch (error) {
         res.status(500).send({ mensaje: 'Error al obtener los superhéroes', error: error.message });
     }
@@ -110,14 +110,6 @@ export async function borrarPorNombreSuperheroeController(req, res) {
             res.status(500).send(resultado);
         }
 }
-
-export async function greeting(req,res){
-    const name = 'Emiliano';
-    res.render('greeting',{name});
-}
-
-
-
 export async function borrarTodoController(req,res){
     try {
         const resultado = await borrarTodo();
@@ -128,16 +120,19 @@ export async function borrarTodoController(req,res){
 }
 
 export async function formularioCrearSuperheroe(req,res){
-    res.render('addSuperhero');
+    res.render('addSuperhero',{title:'Agregar Superheroe'});
 }
 
 export async function formularioActualizarSuperheroeController(req,res){
     const datos = req.body;
-    res.render('editSuperhero',{datos});
+    res.render('editSuperhero',{datos,title:'Actualizar Superheroe'});
 }
 
 export async function alertaEliminacionSuperheroeController(req,res){
     const idNombreSuperheroe = req.body;
-    res.render('alertaEliminacionSuperheroe',{idNombreSuperheroe});
+    res.render('alertaEliminacionSuperheroe',{idNombreSuperheroe,title:'Borrar Superheroe'});
 }
 
+export async function obtenerPaginaPrincipal(req, res){
+    res.render('index', {title: 'Página Principal'})
+  }

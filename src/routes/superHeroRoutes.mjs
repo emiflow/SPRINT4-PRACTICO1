@@ -9,10 +9,10 @@ import {
     borrarPorIdController,
     borrarPorNombreSuperheroeController,
     borrarTodoController,
-    greeting,
     formularioCrearSuperheroe,
     formularioActualizarSuperheroeController,
-    alertaEliminacionSuperheroeController
+    alertaEliminacionSuperheroeController,
+    obtenerPaginaPrincipal
 } from '../controllers/superheroesController.mjs';
 
 import { reglasDeValidacion } from '../validations/validacionesSuperheroes.mjs';
@@ -25,7 +25,7 @@ router.get('/heroes/:id', obtenerSuperheroePorIdController);
 router.get('/heroes/buscar/:atributo/:valor', buscarSuperheroesPorAtributoController);
 router.get('/mayores-30', obtenerSuperheroesMayoresDe30Controller);
 router.get('/formularioCrearSuperheroe',formularioCrearSuperheroe);
-router.get('/greeting', greeting);
+router.get('/', obtenerPaginaPrincipal);
 router.post('/crearSuperheroe' ,reglasDeValidacion(),validacionErrores, crearSuperheroeController);
 router.post('/formularioActualizarSuperheroe',formularioActualizarSuperheroeController);
 router.post('/formularioActualizarSuperheroe',formularioActualizarSuperheroeController);

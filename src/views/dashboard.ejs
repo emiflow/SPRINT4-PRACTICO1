@@ -1,14 +1,5 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Superhéroes</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 p-6">
-    <div class="overflow-x-auto">
+<div class="overflow-x-auto">
         <table class="min-w-full bg-white border border-gray-300 shadow-lg rounded-lg">
             <thead class="bg-blue-600 text-white">
                 <tr>
@@ -49,21 +40,20 @@
                             <input type="hidden" name="aliados" value="<%= superheroe.aliados %>">
                             <input type="hidden" name="enemigos" value="<%= superheroe.enemigos %>">
                             <input type="hidden" name="creador" value="<%= superheroe.creador %>">
-                            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Actualizar</button>
+                            <button type="submit" class="btn-actualizar">Actualizar</button>
                         </form>
                     </td>
                     <td class="p-3">
                         <form action="http://localhost:3000/api/alertaEliminacionSuperheroe" method="post">
                             <input type="hidden" name="_id" value="<%= superheroe._id %>">
                             <input type="hidden" name="nombreSuperHeroe" value="<%= superheroe.nombreSuperHeroe %>">
-                            <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">Eliminar</button>
+                            <button type="submit" class="btn-eliminar">Eliminar</button>
                         </form>
                     </td>
                 </tr>
                 <% }); %>
             </tbody>
         </table>
-    </div>
-</body>
-</html>
+</div>
+
 
